@@ -98,11 +98,11 @@ export const AMBER: Theme = {
 	},
 };
 
-// Cool cyan CRT — David's default. Distinct from jdx neon/amber.
+// Cool cyan CRT with warmer skyline accents — David's default.
 export const ICE: Theme = {
 	name: 'ice',
 	accent: '#6ec8ff',
-	accent2: '#9ae8ff',
+	accent2: '#ff8b6a',
 	ok: '#5ddea6',
 	bg: '#070b12',
 	fg: '#d7e2ef',
@@ -110,19 +110,19 @@ export const ICE: Theme = {
 	faint: '#6a7a8f',
 	fainter: '#3d4a5c',
 	bright: '#f4f8ff',
-	star: '#a8d4ff',
-	langs: ['#6ec8ff', '#9ae8ff', '#5ddea6', '#b8c7d9', '#7aa2c4', '#6a7a8f'],
-	series: ['#6ec8ff', '#9ae8ff', '#5ddea6', '#b8c7d9', '#7aa2c4', '#a8d4ff', '#5b8fb8', '#6a7a8f'],
+	star: '#e8c56a',
+	langs: ['#6ec8ff', '#5ddea6', '#ff8b6a', '#e8c56a', '#b8a4ff', '#3ecfcf'],
+	series: ['#6ec8ff', '#5ddea6', '#ff8b6a', '#e8c56a', '#b8a4ff', '#3ecfcf', '#ff8eb5', '#8b9bb0'],
 	well: '#0e1520',
 	moon: '#e8f1ff',
 	city: {
-		roofs: ['#0a2a4a', '#12507a', '#1f7ab0', '#6ec8ff'],
+		roofs: ['#12507a', '#1f8a6a', '#c45a3a', '#e8c56a'],
 		left: '#152233',
-		right: '#0e1826',
+		right: '#1a1520',
 		empty: '#101820',
 		emptyStroke: '#070b12',
 		winOn: '#b8f0ff',
-		winSide: '#6ec8ff',
+		winSide: '#ffc4a8',
 		winOff: '#121a26',
 		sky: '#d7e2ef',
 	},
