@@ -1,0 +1,13 @@
+{
+  "name": "dlm6693-profile",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "simple-icons": "^16.33.0",
+    "subset-font": "^2.9.0"
+  }
+}

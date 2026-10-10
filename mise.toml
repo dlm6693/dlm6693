@@ -1,0 +1,23 @@
+[tools]
+node = "22"
+
+[tasks.install]
+description = "install node dependencies"
+run = "npm install --no-fund --no-audit"
+sources = ["package.json"]
+outputs = { auto = true }
+
+[tasks.fetch]
+description = "fetch GitHub contributions into data/"
+depends = ["install"]
+run = "node src/fetch.ts"
+
+[tasks.render]
+description = "render assets/*.svg and README.md from data/"
+depends = ["install"]
+run = "node src/render.ts"
+
+[tasks.readme]
+description = "fetch fresh data and regenerate the profile README"
+depends = ["fetch"]
+run = "node src/render.ts"

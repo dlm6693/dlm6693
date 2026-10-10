@@ -1,0 +1,33 @@
+{
+	"github": {
+		"created_at": "2018-12-07T18:28:13Z",
+		"followers": 21,
+		"public_repos": 14,
+		"prs": 812,
+		"prs_merged": 595,
+		"year": 2026,
+		"contributions_year": 3836,
+		"contributions_all": 6474,
+		"streak_current": 13,
+		"streak_longest": 24,
+		"languages": {
+			"Jupyter Notebook": 45256601,
+			"Python": 34053877,
+			"C++": 1618684,
+			"Tcl": 1300274,
+			"C": 1193111,
+			"HTML": 384676,
+			"JavaScript": 181729,
+			"CSS": 88311,
+			"Fortran": 8281,
+			"Cython": 7796,
+			"Smarty": 2040,
+			"PowerShell": 1755,
+			"Batchfile": 1376,
+			"Xonsh": 1200,
+			"DTrace": 969,
+			"Shell": 277,
+			"Go": 268
+		}
+	}
+}
