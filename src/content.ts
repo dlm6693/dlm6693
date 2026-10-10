@@ -1,4 +1,5 @@
 // Editable profile copy. Render reads this; no fetch required.
+// Keep the facts in step with the site (dlm6693.github.io/src/content.ts).
 
 export const SITE_URL = 'https://dlm6693.github.io';
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/david-l-miller';
@@ -6,50 +7,51 @@ export const GITHUB_URL = 'https://github.com/dlm6693';
 export const LOGIN = 'dlm6693';
 
 export const NAME = 'DAVID MILLER';
-export const BAR_LEFT = 'METER://BILLING // LOC:QNS';
-export const BAR_RIGHT = 'HP OK · ALERTS ARMED';
+export const BAR_LEFT = 'BILLING // USAGE METERING // LOC:QNS';
+export const BAR_RIGHT = 'STATUS OK';
 
 export const TAGLINE = [
-	'senior engineer · Go · Kubernetes · DevX-minded',
-	'Queens, NY · three cats · CI that stays green',
-	'shipping meters & ledgers at ',
+	'senior software engineer · backend infrastructure',
+	'Go · Kubernetes · Queens, NYC · three cats',
+	'billing and usage metering for GPU cloud at ',
 ];
 
 export const EMPLOYER = 'COREWEAVE';
 
 export const ABOUT_LINES = [
-	'Senior engineer on CoreWeave billing — mostly Go on Kubernetes.',
-	'Not a tools team. Still the one asking why that alert did not page.',
-	'Earlier: AWS boto3 maintainer, then senior engineer at The New York Times.',
-	'NYC native. Dry humor. Freshly caffeinated preferred.',
+	'Senior software engineer at CoreWeave, on billing infrastructure for',
+	'GPU cloud computing: metering usage and processing usage data reliably',
+	'enough to bill from. Mostly Go, on Kubernetes.',
+	'Before: The New York Times (subscription platform) and AWS (boto3).',
+	'Into distributed systems, developer productivity, and language design.',
 ];
 
+/** Reverse chronological. */
 export const EXPERIENCE = [
 	{
-		role: 'Senior Engineer',
+		role: 'Senior Software Engineer',
 		org: 'CoreWeave',
-		when: 'present',
-		blurb: 'Go on k8s — billing, metering, CI/DevX care',
+		when: 'now',
+		blurb: 'Billing and usage metering for GPU cloud — Go on Kubernetes',
 	},
 	{
-		role: 'Maintainer',
-		org: 'AWS boto3',
-		when: 'past',
-		blurb: 'Python SDK — developer tooling at scale',
-	},
-	{
-		role: 'Senior Engineer',
+		role: 'Senior Software Engineer',
 		org: 'The New York Times',
-		when: 'past',
-		blurb: 'Backend at news scale — publish every day',
+		when: 'before',
+		blurb: 'Backend systems for the subscription platform',
+	},
+	{
+		role: 'Software Development Engineer',
+		org: 'AWS',
+		when: 'earlier',
+		blurb: 'Worked on boto3, the AWS SDK for Python',
 	},
 ];
 
 export const STACK = [
-	{name: 'runtime', value: 'Go · Kubernetes · containers'},
-	{name: 'data', value: 'Postgres · Kafka · Redis'},
-	{name: 'apis', value: 'gRPC · Connect · REST'},
-	{name: 'devx', value: 'CI/CD · local loops · green merges'},
-	{name: 'ops', value: 'Prometheus · Grafana · alerts that page'},
-	{name: 'also', value: 'Python · Java when the job asks'},
+	{name: 'languages', value: 'Go · Python · Java'},
+	{name: 'runtime', value: 'Kubernetes · containers'},
+	{name: 'data', value: 'PostgreSQL · Kafka'},
+	{name: 'interests', value: 'distributed systems · reliability · observability'},
+	{name: 'also', value: 'developer productivity · language design'},
 ];

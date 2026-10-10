@@ -28,9 +28,9 @@ const DEFAULT_THEME = 'ice';
 const RAW = `https://github.com/${LOGIN}/${LOGIN}/raw/main/assets`;
 const PHONE_QUERY = '(max-width: 600px)';
 const ABOUT_ALT =
-	'David Miller: senior engineer at CoreWeave — Go and Kubernetes for AI infrastructure billing. Former AWS boto3 maintainer and senior engineer at The New York Times. Queens, NY.';
+	'David Miller: senior software engineer at CoreWeave, on billing and usage-metering infrastructure for GPU cloud computing, mostly Go on Kubernetes. Previously senior software engineer on The New York Times subscription platform, and before that SDE at AWS working on boto3. Queens, NYC.';
 const STACK_ALT =
-	'Stack: Go, Kubernetes, Postgres, Kafka, Redis, gRPC/Connect, Prometheus, Grafana, CI/CD; also Python and Java.';
+	'Languages: Go, Python, Java. Runtime: Kubernetes. Data: PostgreSQL, Kafka. Interests: distributed systems, reliability, observability, developer productivity, language design.';
 
 class Page {
 	files = new Map<string, string>();

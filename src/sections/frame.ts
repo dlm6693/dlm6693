@@ -51,7 +51,7 @@ const HEADER_CSS = `@keyframes type{from{width:0}}
 .meter{transform-origin:left center;animation:meter .8s ease-out 1.1s both}`;
 
 export function headerAlt(): string {
-	return `David Miller (@${LOGIN}). Senior engineer at CoreWeave — Go and Kubernetes for AI infrastructure billing. Formerly AWS boto3 maintainer and senior engineer at The New York Times. Queens, NY.`;
+	return `David Miller (@${LOGIN}). Senior software engineer at CoreWeave, on billing and usage-metering infrastructure for GPU cloud computing, mostly Go on Kubernetes. Previously senior software engineer on The New York Times subscription platform, and before that SDE at AWS working on boto3. Queens, NYC.`;
 }
 
 export async function header(t: Theme): Promise<[string, string]> {
@@ -123,13 +123,13 @@ export async function phoneHeader(t: Theme): Promise<[string, string]> {
 	const defs = `${scan}
 <filter id="tglow" x="-5%" y="-40%" width="110%" height="180%"><feGaussianBlur stdDeviation="8"/></filter>
 <clipPath id="typeclip"><rect class="typing" x="${X}" y="64" width="140" height="30"/></clipPath>`;
-	const barRight = 'LEDGER · OK';
-	const barLeft = 'METER://QNS';
+	const barRight = 'STATUS OK';
+	const barLeft = 'BILLING // QNS';
 	const dotx = FR - 14 - barRight.length * 8.2 - 16;
 	const row = (markup: string) => `<text class="fg" x="${X}" y="{y}"><tspan class="cy">&gt;&gt;</tspan> ${markup}</text>`;
 	const rows = [
-		row(esc('Go · Kubernetes · cloud-native')),
-		row(esc('Queens, NY · three cats')),
+		row(esc('backend infra · Go · Kubernetes')),
+		row(esc('Queens, NYC · three cats')),
 		row(`billing at <tspan class="cy" font-weight="700">${EMPLOYER}</tspan>`),
 	];
 	const upper = rows.slice(0, -1);
