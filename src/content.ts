@@ -6,12 +6,11 @@ export const GITHUB_URL = 'https://github.com/dlm6693';
 export const LOGIN = 'dlm6693';
 
 export const NAME = 'DAVID MILLER';
-// Billing / Queens flavored chrome — not the ENTIRE.IO / OSS console voice.
 export const BAR_LEFT = 'METER://BILLING // LOC:QNS';
-export const BAR_RIGHT = 'LEDGER SYNCED · OK';
+export const BAR_RIGHT = 'HP OK · ALERTS ARMED';
 
 export const TAGLINE = [
-	'backend engineer · Go · Kubernetes · DevX-minded',
+	'senior engineer · Go · Kubernetes · DevX-minded',
 	'Queens, NY · three cats · CI that stays green',
 	'shipping meters & ledgers at ',
 ];
@@ -19,15 +18,15 @@ export const TAGLINE = [
 export const EMPLOYER = 'COREWEAVE';
 
 export const ABOUT_LINES = [
-	'I build billing systems for AI infrastructure at CoreWeave — mostly Go',
-	'on Kubernetes. Not a tools team; still obsessed with DevX and CI/CD.',
+	'Senior engineer on CoreWeave billing — mostly Go on Kubernetes.',
+	'Not a tools team. Still the one asking why that alert did not page.',
 	'Earlier: AWS boto3 maintainer, then backend at The New York Times.',
-	'NYC native. Reliable systems + feedback loops engineers can trust.',
+	'NYC native. Dry humor. Freshly caffeinated preferred.',
 ];
 
 export const EXPERIENCE = [
 	{
-		role: 'Software Engineer',
+		role: 'Senior Engineer',
 		org: 'CoreWeave',
 		when: 'present',
 		blurb: 'Go on k8s — billing, metering, CI/DevX care',
@@ -46,12 +45,11 @@ export const EXPERIENCE = [
 	},
 ];
 
-// Industry-familiar cloud-native suite — lead with what you actually touch.
 export const STACK = [
 	{name: 'runtime', value: 'Go · Kubernetes · containers'},
 	{name: 'data', value: 'Postgres · Kafka · Redis'},
 	{name: 'apis', value: 'gRPC · Connect · REST'},
-	{name: 'devx', value: 'CI/CD · local loops · clear APIs'},
-	{name: 'ops', value: 'Prometheus · Grafana · pipelines'},
+	{name: 'devx', value: 'CI/CD · local loops · green merges'},
+	{name: 'ops', value: 'Prometheus · Grafana · alerts that page'},
 	{name: 'also', value: 'Python · Java when the job asks'},
 ];
