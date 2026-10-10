@@ -20,7 +20,7 @@ export const EMPLOYER = 'COREWEAVE';
 export const ABOUT_LINES = [
 	'Senior engineer on CoreWeave billing — mostly Go on Kubernetes.',
 	'Not a tools team. Still the one asking why that alert did not page.',
-	'Earlier: AWS boto3 maintainer, then backend at The New York Times.',
+	'Earlier: AWS boto3 maintainer, then senior engineer at The New York Times.',
 	'NYC native. Dry humor. Freshly caffeinated preferred.',
 ];
 
@@ -38,7 +38,7 @@ export const EXPERIENCE = [
 		blurb: 'Python SDK — developer tooling at scale',
 	},
 	{
-		role: 'Engineer',
+		role: 'Senior Engineer',
 		org: 'The New York Times',
 		when: 'past',
 		blurb: 'Backend at news scale — publish every day',

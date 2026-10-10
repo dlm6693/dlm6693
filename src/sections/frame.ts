@@ -51,7 +51,7 @@ const HEADER_CSS = `@keyframes type{from{width:0}}
 .meter{transform-origin:left center;animation:meter .8s ease-out 1.1s both}`;
 
 export function headerAlt(): string {
-	return `David Miller (@${LOGIN}). Backend engineer at CoreWeave — Go and Kubernetes for AI infrastructure billing. Formerly AWS boto3 maintainer and The New York Times. Queens, NY.`;
+	return `David Miller (@${LOGIN}). Senior engineer at CoreWeave — Go and Kubernetes for AI infrastructure billing. Formerly AWS boto3 maintainer and senior engineer at The New York Times. Queens, NY.`;
 }
 
 export async function header(t: Theme): Promise<[string, string]> {
