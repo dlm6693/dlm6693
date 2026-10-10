@@ -32,7 +32,7 @@ export const EXPERIENCE = [
 		role: 'Senior Software Engineer',
 		org: 'CoreWeave',
 		when: 'now',
-		blurb: 'Billing and usage metering for GPU cloud — Go on Kubernetes',
+		blurb: 'Billing and usage metering for GPU cloud. Go on Kubernetes',
 	},
 	{
 		role: 'Senior Software Engineer',
