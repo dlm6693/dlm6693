@@ -11,8 +11,8 @@ export const BAR_LEFT = 'METER://BILLING // LOC:QNS';
 export const BAR_RIGHT = 'LEDGER SYNCED · OK';
 
 export const TAGLINE = [
-	'backend engineer · Go · Kubernetes · cloud-native',
-	'Queens, NY · three cats · billing platforms',
+	'backend engineer · Go · Kubernetes · DevX-minded',
+	'Queens, NY · three cats · CI that stays green',
 	'shipping meters & ledgers at ',
 ];
 
@@ -20,9 +20,9 @@ export const EMPLOYER = 'COREWEAVE';
 
 export const ABOUT_LINES = [
 	'I build billing systems for AI infrastructure at CoreWeave — mostly Go',
-	'on Kubernetes: services, APIs, the meters and ledgers finance trusts.',
-	'Earlier: AWS boto3 (Python), then backend at The New York Times.',
-	'NYC native. Not an OSS celebrity — just someone who ships reliable systems.',
+	'on Kubernetes. Not a tools team; still obsessed with DevX and CI/CD.',
+	'Earlier: AWS boto3 maintainer, then backend at The New York Times.',
+	'NYC native. Reliable systems + feedback loops engineers can trust.',
 ];
 
 export const EXPERIENCE = [
@@ -30,19 +30,19 @@ export const EXPERIENCE = [
 		role: 'Software Engineer',
 		org: 'CoreWeave',
 		when: 'present',
-		blurb: 'Go services on k8s — billing, metering, credits',
+		blurb: 'Go on k8s — billing, metering, CI/DevX care',
 	},
 	{
 		role: 'Maintainer',
 		org: 'AWS boto3',
 		when: 'past',
-		blurb: 'Python SDK used across the cloud',
+		blurb: 'Python SDK — developer tooling at scale',
 	},
 	{
 		role: 'Engineer',
 		org: 'The New York Times',
 		when: 'past',
-		blurb: 'Backend systems at news scale',
+		blurb: 'Backend at news scale — publish every day',
 	},
 ];
 
@@ -51,6 +51,7 @@ export const STACK = [
 	{name: 'runtime', value: 'Go · Kubernetes · containers'},
 	{name: 'data', value: 'Postgres · Kafka · Redis'},
 	{name: 'apis', value: 'gRPC · Connect · REST'},
-	{name: 'ops', value: 'Prometheus · Grafana · CI/CD'},
+	{name: 'devx', value: 'CI/CD · local loops · clear APIs'},
+	{name: 'ops', value: 'Prometheus · Grafana · pipelines'},
 	{name: 'also', value: 'Python · Java when the job asks'},
 ];
