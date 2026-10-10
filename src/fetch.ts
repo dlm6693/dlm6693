@@ -139,6 +139,7 @@ async function fetchGitHub(today: Date): Promise<{github: GitHubStats; calendar:
 			contributions_all: all,
 			streak_current: current,
 			streak_longest: longest,
+			years: Object.fromEntries(years.map(y => [String(y), ydata[`y${y}`].contributionCalendar.totalContributions])),
 			languages: Object.fromEntries([...langs].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))),
 		},
 	};

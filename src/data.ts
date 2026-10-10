@@ -12,6 +12,8 @@ export type GitHubStats = {
 	streak_current: number;
 	streak_longest: number;
 	languages: Record<string, number>;
+	/** Contributions per calendar year, oldest first. The current year is partial. */
+	years: Record<string, number>;
 };
 
 export type Snapshot = {
