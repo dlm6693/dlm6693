@@ -6,8 +6,8 @@
 		"prs": 88,
 		"prs_merged": 60,
 		"year": 2026,
-		"contributions_year": 3865,
-		"contributions_all": 6503,
+		"contributions_year": 3868,
+		"contributions_all": 6506,
 		"streak_current": 13,
 		"streak_longest": 24,
 		"years": {
@@ -19,7 +19,7 @@
 			"2023": 160,
 			"2024": 581,
 			"2025": 822,
-			"2026": 3865
+			"2026": 3868
 		},
 		"languages": {
 			"Jupyter Notebook": 45256601,
@@ -27,10 +27,10 @@
 			"C++": 1618684,
 			"Tcl": 1300274,
 			"C": 1193111,
-			"HTML": 387742,
+			"HTML": 388696,
 			"JavaScript": 181729,
-			"CSS": 98582,
-			"TypeScript": 86047,
+			"TypeScript": 115079,
+			"CSS": 114998,
 			"Fortran": 8281,
 			"Cython": 7796,
 			"Smarty": 2040,
