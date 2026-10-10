@@ -38,19 +38,20 @@ import {
 	LOGIN,
 	NAME,
 	SITE_URL,
+	STACK,
 	TAGLINE,
 } from '../content.ts';
 
+// Soft ice fade — no magenta glitch (that reads as jdx/cyberpunk clone).
 const HEADER_CSS = `@keyframes type{from{width:0}}
-@keyframes flicker{0%{opacity:0}10%{opacity:1}14%{opacity:.2}22%{opacity:1}30%{opacity:.4}40%,100%{opacity:1}}
-@keyframes gm{0%,92%,100%{transform:translate(0,0)}93%{transform:translate(5px,-1px)}95%{transform:translate(-3px,1px)}97%{transform:translate(2px,0)}}
-@keyframes gc{0%,92%,100%{transform:translate(0,0)}93%{transform:translate(-5px,1px)}95%{transform:translate(4px,-1px)}97%{transform:translate(-2px,0)}}
-.typing{animation:type .7s steps(8) .3s both}
-.name{animation:flicker .9s linear 1.1s both}
-.gm{animation:gm 6s linear 2s infinite}.gc{animation:gc 6s linear 2s infinite}`;
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes meter{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.typing{animation:type .7s steps(10) .25s both}
+.name{animation:rise .55s ease-out .55s both}
+.meter{transform-origin:left center;animation:meter .8s ease-out 1.1s both}`;
 
 export function headerAlt(): string {
-	return `David Miller (@${LOGIN}). Backend software engineer at CoreWeave building the billing platform. Formerly AWS boto3 maintainer and The New York Times. Queens, NY.`;
+	return `David Miller (@${LOGIN}). Backend engineer at CoreWeave — Go and Kubernetes for AI infrastructure billing. Formerly AWS boto3 maintainer and The New York Times. Queens, NY.`;
 }
 
 export async function header(t: Theme): Promise<[string, string]> {
@@ -71,21 +72,18 @@ export async function header(t: Theme): Promise<[string, string]> {
 	];
 	const [descLines] = stagger(rows.slice(0, 2), h - 6 - 24, 24, 1.75, 0.25);
 	const [employerLine] = stagger(rows.slice(2), 18, 24, 2.25, 0.25);
-	const big = (x: number, fill: string, extra = '') =>
-		`<text x="${x}" y="172" fill="${fill}"${extra} style="font-size:52px">${name}</text>`;
 	const body = `<rect x="${FL}" y="${M}" width="${FR - FL}" height="34" fill="${t.accent}" fill-opacity=".08"/>
 <line x1="${FL}" y1="${M + 34}" x2="${FR}" y2="${M + 34}" stroke="${t.accent}" stroke-opacity=".5"/>
 <text x="${FL + 16}" y="${M + 22}" letter-spacing="1" class="cy" style="font-size:12px">${esc(BAR_LEFT)}</text>
 <text x="${FR - 20}" y="${M + 22}" letter-spacing="1" class="dim" text-anchor="end" style="font-size:12px">${esc(BAR_RIGHT)}</text>
 <circle class="dot" cx="${f1(dotx)}" cy="${M + 18}" r="4" fill="${t.ok}"/>
 <circle class="dot" cx="${f1(dotx)}" cy="${M + 18}" r="4" fill="${t.ok}" filter="url(#sglow)"/>
-<g clip-path="url(#typeclip)"><text x="${X}" y="102" class="dim"><tspan class="gr">$</tspan> whoami</text></g>
+<g clip-path="url(#typeclip)"><text x="${X}" y="102" class="dim"><tspan class="gr">$</tspan> identity</text></g>
 <g class="name" font-weight="800" letter-spacing="2" style="font-size:52px">
-${big(X, t.accent, ' opacity=".55" filter="url(#tglow)"')}
-<g class="gm">${big(X + 3, t.accent2, ' opacity=".75"')}</g>
-<g class="gc">${big(X - 3, t.accent, ' opacity=".85"')}</g>
-${big(X, t.bright)}
+<text x="${X}" y="172" fill="${t.accent}" opacity=".4" filter="url(#tglow)" style="font-size:52px">${name}</text>
+<text x="${X}" y="172" fill="${t.bright}" style="font-size:52px">${name}</text>
 </g>
+<rect class="meter" x="${X}" y="184" width="220" height="3" fill="${t.accent}" opacity=".85"/>
 ${descLines}
 <rect x="${FL}" y="${M + 35}" width="${FR - FL}" height="${h - M - 35}" fill="url(#scan)"/>`;
 	const tail = `${employerLine}
@@ -116,7 +114,7 @@ ${descLines}
 }
 
 export async function phoneHeader(t: Theme): Promise<[string, string]> {
-	const {FL, FR, M, X, R} = PHONE;
+	const {FL, FR, M, X} = PHONE;
 	const name = NAME;
 	const nameSize = 40;
 	const css = HEADER_CSS;
@@ -125,34 +123,31 @@ export async function phoneHeader(t: Theme): Promise<[string, string]> {
 	const defs = `${scan}
 <filter id="tglow" x="-5%" y="-40%" width="110%" height="180%"><feGaussianBlur stdDeviation="8"/></filter>
 <clipPath id="typeclip"><rect class="typing" x="${X}" y="64" width="140" height="30"/></clipPath>`;
-	const barRight = 'ONLINE · NOMINAL';
-	const barLeft = 'SYS://CW // DLM';
+	const barRight = 'LEDGER · OK';
+	const barLeft = 'METER://QNS';
 	const dotx = FR - 14 - barRight.length * 8.2 - 16;
 	const row = (markup: string) => `<text class="fg" x="${X}" y="{y}"><tspan class="cy">&gt;&gt;</tspan> ${markup}</text>`;
 	const rows = [
-		row(esc('backend engineer · Python · Java · Go')),
+		row(esc('Go · Kubernetes · cloud-native')),
 		row(esc('Queens, NY · three cats')),
-		row(`billing platform at <tspan class="cy" font-weight="700">${EMPLOYER}</tspan>`),
+		row(`billing at <tspan class="cy" font-weight="700">${EMPLOYER}</tspan>`),
 	];
 	const upper = rows.slice(0, -1);
 	const h = 200;
 	const [descLines] = stagger(upper, h - 6 - (upper.length - 1) * 22, 22, 1.75, 0.25);
 	const [employerLine] = stagger(rows.slice(-1), 18, 22, 2.25, 0.25);
-	const big = (x: number, fill: string, extra = '') =>
-		`<text x="${x}" y="140" fill="${fill}"${extra} style="font-size:${nameSize}px">${name}</text>`;
 	const body = `<rect x="${FL}" y="${M}" width="${FR - FL}" height="34" fill="${t.accent}" fill-opacity=".08"/>
 <line x1="${FL}" y1="${M + 34}" x2="${FR}" y2="${M + 34}" stroke="${t.accent}" stroke-opacity=".5"/>
 <text x="${FL + 12}" y="${M + 22}" letter-spacing="1" class="cy" style="font-size:11px">${esc(barLeft)}</text>
 <text x="${FR - 14}" y="${M + 22}" letter-spacing="1" class="dim" text-anchor="end" style="font-size:11px">${esc(barRight)}</text>
 <circle class="dot" cx="${f1(dotx)}" cy="${M + 18}" r="4" fill="${t.ok}"/>
 <circle class="dot" cx="${f1(dotx)}" cy="${M + 18}" r="4" fill="${t.ok}" filter="url(#sglow)"/>
-<g clip-path="url(#typeclip)"><text x="${X}" y="86" class="dim"><tspan class="gr">$</tspan> whoami</text></g>
+<g clip-path="url(#typeclip)"><text x="${X}" y="86" class="dim"><tspan class="gr">$</tspan> identity</text></g>
 <g class="name" font-weight="800" letter-spacing="1" style="font-size:${nameSize}px">
-${big(X, t.accent, ' opacity=".55" filter="url(#tglow)"')}
-<g class="gm">${big(X + 2, t.accent2, ' opacity=".75"')}</g>
-<g class="gc">${big(X - 2, t.accent, ' opacity=".85"')}</g>
-${big(X, t.bright)}
+<text x="${X}" y="140" fill="${t.accent}" opacity=".4" filter="url(#tglow)" style="font-size:${nameSize}px">${name}</text>
+<text x="${X}" y="140" fill="${t.bright}" style="font-size:${nameSize}px">${name}</text>
 </g>
+<rect class="meter" x="${X}" y="150" width="140" height="2" fill="${t.accent}" opacity=".85"/>
 ${descLines}
 <rect x="${FL}" y="${M + 35}" width="${FR - FL}" height="${h - M - 35}" fill="url(#scan)"/>`;
 	const tail = `${employerLine}
@@ -166,7 +161,7 @@ ${descLines}
 		sliceG(t, PHONE, h, body, {
 			title: 'David Miller',
 			desc: headerAlt(),
-			text: barLeft + barRight + name + '$ whoami',
+			text: barLeft + barRight + name + '$ identity',
 			top: true,
 			css,
 			defs,
@@ -180,6 +175,49 @@ ${descLines}
 			text: '>>billing at COREWEAVE$',
 		}),
 	]);
+}
+
+export async function stack(t: Theme, counter: string): Promise<string> {
+	const parts: string[] = [
+		heading(t, 44, 'stack', counter),
+		prompt('kubectl get tools -n billing', 0.15, '# what I reach for'),
+	];
+	let y = 118;
+	for (const [i, row] of STACK.entries()) {
+		const dots = '.'.repeat(Math.max(2, 14 - row.name.length));
+		parts.push(`<g class="ln" style="animation-delay:${(0.25 + i * 0.08).toFixed(2)}s">
+<text x="${X}" y="${y}" xml:space="preserve" style="font-size:14px"><tspan class="cy">${esc(row.name)}</tspan><tspan class="fainter">${dots}</tspan> <tspan class="fg">${esc(row.value)}</tspan></text>
+</g>`);
+		y += 28;
+	}
+	const h = Math.ceil((y + 20) / 40) * 40;
+	return slice(t, h, parts.join('\n'), {
+		title: 'Stack',
+		desc: STACK.map(s => `${s.name}: ${s.value}`).join('; '),
+		text: STACK.map(s => s.name + s.value).join(''),
+	});
+}
+
+export async function phoneStack(t: Theme, counter: string): Promise<string> {
+	const g = PHONE;
+	const parts: string[] = [
+		headingG(t, g, 44, 'stack', counter),
+		promptG(g, 'kubectl get tools', 0.15, '# day-to-day', 90, 12),
+	];
+	let y = 118;
+	for (const [i, row] of STACK.entries()) {
+		parts.push(`<g class="ln" style="animation-delay:${(0.25 + i * 0.08).toFixed(2)}s">
+<text x="${g.X}" y="${y}" class="cy" style="font-size:11px">${esc(row.name)}</text>
+<text x="${g.X}" y="${y + 16}" class="fg" style="font-size:12px">${esc(row.value)}</text>
+</g>`);
+		y += 40;
+	}
+	const h = Math.ceil((y + 16) / 40) * 40;
+	return sliceG(t, g, h, parts.join('\n'), {
+		title: 'Stack',
+		desc: STACK.map(s => `${s.name}: ${s.value}`).join('; '),
+		text: STACK.map(s => s.name + s.value).join(''),
+	});
 }
 
 export async function about(t: Theme, counter: string): Promise<string> {

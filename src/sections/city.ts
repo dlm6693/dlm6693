@@ -254,8 +254,8 @@ export async function city(t: Theme, calendar: Calendar, updated: string, counte
 		`${year.active} active days`,
 	].filter(Boolean).map((s, i) => `<text x="${FR - 36}" y="${300 + i * 20}" text-anchor="end" class="dim" style="font-size:12px">${s}</text>`).join('');
 	const legend = [C.empty, ...C.roofs].map((c, i) => `<rect x="${X + 52 + i * 16}" y="642" width="11" height="11" fill="${c}"/>`).join('');
-	const body = `${heading(t, 44, 'contribution-city', counter)}
-${prompt('render-city --last 365d', 0.15, '# one building per day')}
+	const body = `${heading(t, 44, 'skyline', counter)}
+${prompt('render --graph 365d', 0.15, '# one building per day')}
 ${sc.under(st)}
 ${plane(t, 132)}
 ${info}
@@ -263,8 +263,8 @@ ${shapes}
 <text x="${X}" y="652" class="dim" style="font-size:11px">quiet</text>${legend}<text x="${X + 52 + 5 * 16 + 6}" y="652" class="dim" style="font-size:11px">skyscraper</text>
 ${readout(t, FR - 36, 652, 11, 'end')}`;
 	return slice(t, 680, body, {
-		title: `Contribution city ${WHEN[p]}`, desc: cityAlt(calendar), css: sc.css, defs: sc.defs,
-		text: `~/contribution-city${counter}$ render-city --last 365d # one building per dayquietskyscraper`,
+		title: `Contribution skyline ${WHEN[p]}`, desc: cityAlt(calendar), css: sc.css, defs: sc.defs,
+		text: `~/skyline${counter}$ render --graph 365d # one building per dayquietskyscraper`,
 	});
 }
 
@@ -303,8 +303,8 @@ export async function phoneCity(t: Theme, calendar: Calendar, updated: string, c
 		busiest[1] ? `busiest day <tspan class="fg">${monthDay(busiest[0])}</tspan> · ${busiest[1]}` : '',
 		`${year.active} active days`,
 	].filter(Boolean).map((s, i) => `<text x="${g.X}" y="${294 + i * 18}" class="dim" style="font-size:12px">${s}</text>`).join('');
-	const body = `${headingG(t, g, 44, 'contribution-city', counter)}
-${promptG(g, 'render-city --last 365d', 0.15, '# one building per day', 90, 13)}
+	const body = `${headingG(t, g, 44, 'skyline', counter)}
+${promptG(g, 'render --graph 365d', 0.15, '# one building per day', 90, 13)}
 ${sc.under(st)}
 ${plane(t, 120)}
 ${shapes}
@@ -312,7 +312,7 @@ ${info}
 ${readout(t, g.X, 356, 12, 'start')}
 ${legendRow(t, g.X, 382, 12, 11)}`;
 	return sliceG(t, g, H, body, {
-		title: `Contribution city ${WHEN[p]}`, desc: cityAlt(calendar), css: sc.css, defs: sc.defs,
-		text: `~/contribution-city${counter}$ render-city --last 365d # one building per dayquietskyscraper`,
+		title: `Contribution skyline ${WHEN[p]}`, desc: cityAlt(calendar), css: sc.css, defs: sc.defs,
+		text: `~/skyline${counter}$ render --graph 365d # one building per dayquietskyscraper`,
 	});
 }

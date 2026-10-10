@@ -98,7 +98,37 @@ export const AMBER: Theme = {
 	},
 };
 
-export const THEMES: Record<string, Theme> = {neon: NEON, amber: AMBER};
+// Cool cyan CRT — David's default. Distinct from jdx neon/amber.
+export const ICE: Theme = {
+	name: 'ice',
+	accent: '#6ec8ff',
+	accent2: '#9ae8ff',
+	ok: '#5ddea6',
+	bg: '#070b12',
+	fg: '#d7e2ef',
+	dim: '#8b9bb0',
+	faint: '#6a7a8f',
+	fainter: '#3d4a5c',
+	bright: '#f4f8ff',
+	star: '#a8d4ff',
+	langs: ['#6ec8ff', '#9ae8ff', '#5ddea6', '#b8c7d9', '#7aa2c4', '#6a7a8f'],
+	series: ['#6ec8ff', '#9ae8ff', '#5ddea6', '#b8c7d9', '#7aa2c4', '#a8d4ff', '#5b8fb8', '#6a7a8f'],
+	well: '#0e1520',
+	moon: '#e8f1ff',
+	city: {
+		roofs: ['#0a2a4a', '#12507a', '#1f7ab0', '#6ec8ff'],
+		left: '#152233',
+		right: '#0e1826',
+		empty: '#101820',
+		emptyStroke: '#070b12',
+		winOn: '#b8f0ff',
+		winSide: '#6ec8ff',
+		winOff: '#121a26',
+		sky: '#d7e2ef',
+	},
+};
+
+export const THEMES: Record<string, Theme> = {neon: NEON, amber: AMBER, ice: ICE};
 
 export const W = 880;
 export const M = 16; // transparent side margin, room for the glow

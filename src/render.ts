@@ -1,10 +1,9 @@
 // Renders SVG slices and README.md from data/ + content.ts.
-//   node src/render.ts [--theme amber|neon] [--root <dir>]
+//   node src/render.ts [--theme ice|amber|neon] [--root <dir>]
 import {mkdir, readFile, rm, writeFile} from 'node:fs/promises';
 import {parseArgs} from 'node:util';
 import {THEMES, esc} from './console.ts';
-import {SITE_URL} from './content.ts';
-import {LOGIN} from './content.ts';
+import {LOGIN, SITE_URL} from './content.ts';
 import {type Calendar} from './data.ts';
 import {city, cityAlt, phoneCity} from './sections/city.ts';
 import {
@@ -19,15 +18,19 @@ import {
 	phoneFooter,
 	phoneHeader,
 	phoneSectionHead,
+	phoneStack,
 	sectionHead,
+	stack,
 } from './sections/frame.ts';
 import {CREDIT_POST, CREDIT_URL} from './shared.ts';
 
-const DEFAULT_THEME = 'amber';
+const DEFAULT_THEME = 'ice';
 const RAW = `https://github.com/${LOGIN}/${LOGIN}/raw/main/assets`;
 const PHONE_QUERY = '(max-width: 600px)';
 const ABOUT_ALT =
-	'David Miller: backend engineer at CoreWeave (billing), former AWS boto3 maintainer, ex-NYT. Queens, NY.';
+	'David Miller: backend engineer at CoreWeave — Go and Kubernetes for AI infrastructure billing. Former AWS boto3 maintainer, ex-NYT. Queens, NY.';
+const STACK_ALT =
+	'Stack: Go, Kubernetes, Postgres, Kafka, Redis, gRPC/Connect, Prometheus, Grafana, CI/CD; also Python and Java.';
 
 class Page {
 	files = new Map<string, string>();
@@ -91,17 +94,21 @@ async function main() {
 		const c = counter();
 		page.add('about.svg', await both(about(t, c), phoneAbout(t, c)), '100%', ABOUT_ALT);
 	}
+	{
+		const c = counter();
+		page.add('stack.svg', await both(stack(t, c), phoneStack(t, c)), '100%', STACK_ALT);
+	}
 
 	{
 		const c = counter();
 		page.add(
 			'links.svg',
 			await both(
-				sectionHead(t, 'links', c, 'open --url site linkedin github'),
-				phoneSectionHead(t, 'links', c, 'open --url …'),
+				sectionHead(t, 'connect', c, 'open --url site linkedin github'),
+				phoneSectionHead(t, 'connect', c, 'open --url …'),
 			),
 			'100%',
-			'Links',
+			'Connect',
 		);
 	}
 	for (const [k, b] of LINKS.entries()) {

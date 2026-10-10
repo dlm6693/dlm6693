@@ -6,26 +6,51 @@ export const GITHUB_URL = 'https://github.com/dlm6693';
 export const LOGIN = 'dlm6693';
 
 export const NAME = 'DAVID MILLER';
-export const BAR_LEFT = 'SYS://COREWEAVE // NODE:DLM';
-export const BAR_RIGHT = 'ONLINE · ALL SYSTEMS NOMINAL';
+// Billing / Queens flavored chrome — not the ENTIRE.IO / OSS console voice.
+export const BAR_LEFT = 'METER://BILLING // LOC:QNS';
+export const BAR_RIGHT = 'LEDGER SYNCED · OK';
 
 export const TAGLINE = [
-	'backend software engineer · Python · Java · Go',
-	'NYC native · Queens · three cats',
-	'building the billing platform at ',
+	'backend engineer · Go · Kubernetes · cloud-native',
+	'Queens, NY · three cats · billing platforms',
+	'shipping meters & ledgers at ',
 ];
 
 export const EMPLOYER = 'COREWEAVE';
 
 export const ABOUT_LINES = [
-	'I build backend systems for AI infrastructure billing at CoreWeave.',
-	'Previously maintained the AWS Python SDK (boto3) and worked at',
-	'The New York Times. Mostly Python, Java, and Go — shipping the',
-	'boring reliable stuff that keeps money and meters honest.',
+	'I build billing systems for AI infrastructure at CoreWeave — mostly Go',
+	'on Kubernetes: services, APIs, the meters and ledgers finance trusts.',
+	'Earlier: AWS boto3 (Python), then backend at The New York Times.',
+	'NYC native. Not an OSS celebrity — just someone who ships reliable systems.',
 ];
 
 export const EXPERIENCE = [
-	{role: 'Software Engineer', org: 'CoreWeave', when: 'present', blurb: 'Billing platform for an AI hyperscaler'},
-	{role: 'Maintainer', org: 'AWS boto3', when: 'past', blurb: 'Python SDK used across the cloud'},
-	{role: 'Engineer', org: 'The New York Times', when: 'past', blurb: 'Backend systems at news scale'},
+	{
+		role: 'Software Engineer',
+		org: 'CoreWeave',
+		when: 'present',
+		blurb: 'Go services on k8s — billing, metering, credits',
+	},
+	{
+		role: 'Maintainer',
+		org: 'AWS boto3',
+		when: 'past',
+		blurb: 'Python SDK used across the cloud',
+	},
+	{
+		role: 'Engineer',
+		org: 'The New York Times',
+		when: 'past',
+		blurb: 'Backend systems at news scale',
+	},
+];
+
+// Industry-familiar cloud-native suite — lead with what you actually touch.
+export const STACK = [
+	{name: 'runtime', value: 'Go · Kubernetes · containers'},
+	{name: 'data', value: 'Postgres · Kafka · Redis'},
+	{name: 'apis', value: 'gRPC · Connect · REST'},
+	{name: 'ops', value: 'Prometheus · Grafana · CI/CD'},
+	{name: 'also', value: 'Python · Java when the job asks'},
 ];
