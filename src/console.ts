@@ -98,7 +98,7 @@ export const AMBER: Theme = {
 	},
 };
 
-// OLED dark + muted jewel accents (matches site).
+// OLED dark. The city is one cyan, dim on a quiet day and bright on a busy one.
 export const ICE: Theme = {
 	name: 'ice',
 	accent: '#2a7aad',
@@ -116,15 +116,15 @@ export const ICE: Theme = {
 	well: '#0c0c12',
 	moon: '#9a9aac',
 	city: {
-		roofs: ['#1a4a6e', '#1a6a42', '#7a3a28', '#6e5a1e'],
-		left: '#0e0e14',
-		right: '#121018',
-		empty: '#08080c',
+		roofs: ['#123848', '#1a6078', '#1a9bb8', '#3ee0ff'],
+		left: '#102028',
+		right: '#0c1820',
+		empty: '#0c1218',
 		emptyStroke: '#030305',
-		winOn: '#a8882e',
-		winSide: '#2a7aad',
-		winOff: '#0a0a10',
-		sky: '#5e5e70',
+		winOn: '#e8fcff',
+		winSide: '#8ef0ff',
+		winOff: '#0a1016',
+		sky: '#7d8ea3',
 	},
 };
 

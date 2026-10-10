@@ -50,8 +50,8 @@ function faces(t: Theme, p: Phase) {
 	const C = t.city;
 	switch (p) {
 		case 'night': return {left: C.left, right: C.right, offL: C.winOff, offR: C.winOff};
-		case 'dawn': return {left: mix(C.left, '#4b2a8a', 0.12), right: mix(C.right, '#ff7ab6', 0.1), offL: C.winOff, offR: mix(C.winOff, '#ff9ec7', 0.32)};
-		case 'dusk': return {left: mix(C.left, '#6a1b9a', 0.14), right: mix(C.right, '#ff9e3d', 0.12), offL: C.winOff, offR: mix(C.winOff, '#ff9e3d', 0.45)};
+		case 'dawn': return {left: mix(C.left, t.accent, 0.12), right: mix(C.right, t.accent, 0.1), offL: C.winOff, offR: mix(C.winOff, t.accent, 0.28)};
+		case 'dusk': return {left: mix(C.left, t.accent, 0.14), right: mix(C.right, t.accent, 0.12), offL: C.winOff, offR: mix(C.winOff, t.accent, 0.32)};
 		case 'day': return {left: mix(C.left, daylight(t), 0.1), right: mix(C.right, daylight(t), 0.08), offL: mix(C.winOff, t.accent, 0.14), offR: mix(C.winOff, t.accent, 0.22)};
 	}
 }
