@@ -6,8 +6,8 @@
 		"prs": 88,
 		"prs_merged": 60,
 		"year": 2026,
-		"contributions_year": 4057,
-		"contributions_all": 6695,
+		"contributions_year": 4073,
+		"contributions_all": 6711,
 		"streak_current": 3,
 		"streak_longest": 24,
 		"years": {
@@ -19,7 +19,7 @@
 			"2023": 160,
 			"2024": 581,
 			"2025": 822,
-			"2026": 4057
+			"2026": 4073
 		},
 		"languages": {
 			"Jupyter Notebook": 45256601,
